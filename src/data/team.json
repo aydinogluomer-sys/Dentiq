@@ -1,0 +1,39 @@
+[
+  {
+    "id": "dr-ahmet-yilmaz",
+    "name": "Dr. Ahmet Yılmaz",
+    "title": "Başhekim",
+    "specialty": "Çene Cerrahisi ve İmplantoloji",
+    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop",
+    "bio": "20 yılı aşkın tecrübesiyle binlerce başarılı implant operasyonuna imza atmıştır.",
+    "education": ["Hacettepe Üniversitesi Diş Hekimliği Fakültesi", "New York Üniversitesi İmplantoloji Eğitimi"],
+    "socials": {
+      "linkedin": "#",
+      "instagram": "#"
+    }
+  },
+  {
+    "id": "dr-ayse-kaya",
+    "name": "Dr. Ayşe Kaya",
+    "title": "Uzman Diş Hekimi",
+    "specialty": "Estetik Diş Hekimliği ve Gülüş Tasarımı",
+    "image": "https://images.unsplash.com/photo-1594824436951-7f1267da428f?q=80&w=1974&auto=format&fit=crop",
+    "bio": "Dijital gülüş tasarımı ve zirkonyum kaplamalar konusunda uluslararası sertifikalara sahiptir.",
+    "education": ["Marmara Üniversitesi Diş Hekimliği Fakültesi"],
+    "socials": {
+      "instagram": "#"
+    }
+  },
+  {
+    "id": "dr-mehmet-demir",
+    "name": "Dr. Mehmet Demir",
+    "title": "Uzman Diş Hekimi",
+    "specialty": "Ortodonti ve Şeffaf Plak Tedavisi",
+    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop",
+    "bio": "Invisalign (şeffaf plak) tedavisinde 'Diamond Provider' unvanına sahiptir.",
+    "education": ["Ankara Üniversitesi Diş Hekimliği Fakültesi"],
+    "socials": {
+      "linkedin": "#"
+    }
+  }
+]

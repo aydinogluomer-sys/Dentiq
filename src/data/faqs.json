@@ -1,0 +1,26 @@
+[
+  {
+    "id": "faq-1",
+    "question": "İmplant tedavisi ağrılı bir işlem midir?",
+    "answer": "Hayır, implant operasyonları lokal anestezi altında yapıldığı için işlem sırasında herhangi bir ağrı hissetmezsiniz. İşlem sonrasında ise doktorunuzun reçete edeceği ağrı kesicilerle süreci rahatça atlatabilirsiniz.",
+    "category": "İmplant"
+  },
+  {
+    "id": "faq-2",
+    "question": "Gülüş tasarımı ne kadar sürer?",
+    "answer": "Gülüş tasarımı süresi, yapılacak işlemlere göre değişiklik gösterir. Genellikle ilk muayene ve dijital planlama sonrası, kaplamaların hazırlanması ve takılması 1-2 hafta içinde tamamlanır.",
+    "category": "Estetik"
+  },
+  {
+    "id": "faq-3",
+    "question": "Şeffaf plakları (Invisalign) günde kaç saat takmalıyım?",
+    "answer": "Etkili bir tedavi için şeffaf plaklarınızı yemek yeme ve diş fırçalama dışında, günde ortalama 20-22 saat takmanız önerilmektedir.",
+    "category": "Ortodonti"
+  },
+  {
+    "id": "faq-4",
+    "question": "Muayene ücretli mi?",
+    "answer": "İlk muayene ve panoramik röntgen çekimi kliniğimizde ücretsiz olarak yapılmaktadır.",
+    "category": "Genel"
+  }
+]

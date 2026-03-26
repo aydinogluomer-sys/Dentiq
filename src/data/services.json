@@ -1,0 +1,38 @@
+[
+  {
+    "id": "implant",
+    "title": "İmplant Tedavisi",
+    "description": "Eksik dişlerinizi doğal görünümlü ve kalıcı titanyum implantlarla tamamlayın. Ömür boyu garanti ve ağrısız operasyon.",
+    "icon": "implant",
+    "features": ["Ömür Boyu Garanti", "Ağrısız Operasyon", "Doğal Görünüm", "Hızlı İyileşme"],
+    "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop",
+    "slug": "implant-tedavisi"
+  },
+  {
+    "id": "gulus-tasarimi",
+    "title": "Gülüş Tasarımı",
+    "description": "Yüz hatlarınıza en uygun, estetik ve doğal gülüşü dijital ortamda tasarlıyor ve uyguluyoruz.",
+    "icon": "smile",
+    "features": ["Dijital Planlama", "Zirkonyum Kaplama", "E-max Porselen", "Kişiye Özel Tasarım"],
+    "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop",
+    "slug": "gulus-tasarimi"
+  },
+  {
+    "id": "seffaf-plak",
+    "title": "Şeffaf Plak (Invisalign)",
+    "description": "Telsiz ortodonti ile dişlerinizi dışarıdan belli olmayan şeffaf plaklarla düzeltin.",
+    "icon": "align",
+    "features": ["Görünmez Tedavi", "Çıkarılabilir Plaklar", "Ağrısız Süreç", "Hızlı Sonuç"],
+    "image": "https://images.unsplash.com/photo-1598256989800-fea5ce5146f2?q=80&w=2074&auto=format&fit=crop",
+    "slug": "seffaf-plak"
+  },
+  {
+    "id": "beyazlatma",
+    "title": "Diş Beyazlatma",
+    "description": "Lazer teknolojisi ile tek seansta dişlerinizde 4-5 tona kadar kalıcı beyazlık sağlayın.",
+    "icon": "sparkles",
+    "features": ["Tek Seans", "Lazer Teknolojisi", "Kalıcı Beyazlık", "Hassasiyet Karşıtı"],
+    "image": "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=1974&auto=format&fit=crop",
+    "slug": "dis-beyazlatma"
+  }
+]

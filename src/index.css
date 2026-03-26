@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #b38c61;
+  --color-primary-hover: #c9a87c;
+  --color-dark: #14151d;
+  --color-dark-muted: #2a2b35;
+  --color-light: #eae8e8;
+  --color-beige: #d6d1d0;
+
+  /* Fonts */
+  --font-heading: "Instrument Serif", Georgia, serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Inter Tight", system-ui, sans-serif;
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+
+  /* Box Shadows */
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
+  --shadow-card-hover: 0 8px 24px -4px rgb(0 0 0 / 0.15);
+  --shadow-gold: 0 8px 32px -4px rgb(179 140 97 / 0.35);
+  --shadow-gold-hover: 0 16px 48px -4px rgb(179 140 97 / 0.45);
+  --shadow-cta: 0 10px 25px -5px rgb(179 140 97 / 0.4);
+  --shadow-cta-hover: 0 20px 40px -5px rgb(179 140 97 / 0.5);
+  --shadow-dark: 0 20px 60px -10px rgb(0 0 0 / 0.5);
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-ping-slow: ping-slow 2.5s cubic-bezier(0,0,0.2,1) infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-slide-up: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-in: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-line-grow: lineGrow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  --c-brand-navy: #14151d;
+  --c-brand-navy-linear: linear-gradient(180deg, #2a2b35, #010203);
+  --c-brand-gold: #b38c61;
+  --c-brand-gold-gradient: linear-gradient(270deg, #b38b61, #dac8b7);
+  --c-light-base: #eae8e8;
+  --c-light-beige: #d6d1d0;
+  --c-dark-base: #424346;
+  --c-dark-brown: #6f6968;
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-menu: cubic-bezier(0.6, 0.14, 0, 1);
+}
+
+/* ============================================
+   BASE RESET
+   ============================================ */
+*, ::before, ::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--c-brand-navy);
+  color: var(--c-light-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--c-brand-navy);
+}
+
+/* ============================================
+   GRAIN OVERLAY
+   ============================================ */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ============================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================ */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out-quint), transform 0.8s var(--ease-out-quint);
+}
+.reveal-up.is-visible { opacity: 1; transform: translateY(0); }
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-out-quint);
+}
+.reveal-fade.is-visible { opacity: 1; }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s var(--ease-out-quint), transform 0.8s var(--ease-out-quint);
+}
+.reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s var(--ease-out-quint), transform 0.8s var(--ease-out-quint);
+}
+.reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.8s var(--ease-out-quint), transform 0.8s var(--ease-out-quint);
+}
+.reveal-scale.is-visible { opacity: 1; transform: scale(1); }
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--c-light-base); }
+::-webkit-scrollbar-thumb { background: var(--c-brand-gold); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-dark-brown); }
+
+/* ============================================
+   FOCUS RING
+   ============================================ */
+:focus-visible {
+  outline: 2px solid var(--c-brand-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes ping-slow {
+  0%, 100% { transform: scale(1); opacity: 0.75; }
+  50% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes lineExpand {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes numberCount {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.animate-shake { animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both; }
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: var(--c-brand-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover underline animation */
+.hover-underline { position: relative; }
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.4s var(--ease-out-quint);
+}
+.hover-underline:hover::after { width: 100%; }
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.4s var(--ease-out-quint), box-shadow 0.4s var(--ease-out-quint);
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Button arrow animation */
+.btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s var(--ease-out-quint);
+}
+.btn-arrow:hover { gap: 0.75rem; }
+
+/* Marquee strip */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* Numbered badge */
+.num-badge {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--c-brand-gold);
+  opacity: 0.8;
+}
+
+/* Pill tag */
+.pill-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+/* Backdrop blur header */
+.header-blur {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* ============================================
+   GLASSMORPHISM CARD
+   ============================================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+
+/* ============================================
+   SECTION LABEL STYLE
+   ============================================ */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-brand-gold);
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--c-brand-gold);
+}
+
+/* ============================================
+   CARD BORDER GLOW
+   ============================================ */
+.card-glow {
+  transition: box-shadow 0.4s var(--ease-out-quint);
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(179, 140, 97, 0.4), 0 8px 32px -4px rgba(179, 140, 97, 0.2);
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
